@@ -14,7 +14,7 @@ type Response struct {
 	Errors  interface{} `json:"errors"`
 }
 
-func sendEmail(c *gin.Context) {
+func withRabbit(c *gin.Context) {
 
 	if service.Task(c) != nil {
 		res := Response{
@@ -41,7 +41,7 @@ func rabbit(c *gin.Context) {
 	c.JSON(http.StatusOK, res)
 }
 
-func biasa(c *gin.Context) {
+func withOutRabbit(c *gin.Context) {
 	msg := []byte("To: blokupie@gmail.com\r\n" +
 		"From: lutfiharidha1@gmail.com\r\n" +
 		"Subject: Hello Gophers!\r\n" +
@@ -58,9 +58,9 @@ func biasa(c *gin.Context) {
 }
 func main() {
 	r := gin.Default()
-	r.GET("/send-email", sendEmail)
+	r.GET("/send-email-rabbitmq", withRabbit)
 	r.GET("/", rabbit)
-	r.GET("/biasa", biasa)
+	r.GET("/send-email", withOutRabbit)
 	r.Run()
 
 }

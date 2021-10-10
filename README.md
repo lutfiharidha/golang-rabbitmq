@@ -17,9 +17,9 @@ http://localhost:15672/ -for RabbitMQ dashboard
 
 http://127.0.0.1:8080/ - for home
 
-http://127.0.0.1:8080/send-mail - for send email without RabbitMQ
+http://127.0.0.1:8080/send-email - for send email without RabbitMQ
 
-http://127.0.0.1:8080/send-mail-rabbitmq - for send email with RabbitMQ
+http://127.0.0.1:8080/send-email-rabbitmq - for send email with RabbitMQ
 
 
 goodluck!

@@ -31,11 +31,11 @@ func Task(c *gin.Context) error {
 	if err != nil {
 		return err
 	}
-	msg := []byte("To: blokupie@gmail.com\r\n" +
-		"From: lutfiharidha1@gmail.com\r\n" +
+	msg := []byte("To: some@email.com\r\n" +
+		"From: some@email.com\r\n" +
 		"Subject: Hello Gophers!\r\n" +
 		"\r\n" +
-		"This is the email is sent using golang and sendinblue.\r\n")
+		"This is the email is sent using golang and rabbitmq.\r\n")
 
 	// body := bodyFrom(os.Args)
 	err = ch.Publish(
